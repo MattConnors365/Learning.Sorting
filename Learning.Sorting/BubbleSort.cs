@@ -23,6 +23,7 @@ namespace Learning.Sorting
             int prev1 = array[0], prev2 = array[1];
             for (int i = 0; i < array.Length - 1; i++)
             {
+                bool swapped = false;
                 for (int n = 0; n < array.Length - i - 1; n++)
                 {
                     if (minToMax)
@@ -32,6 +33,7 @@ namespace Learning.Sorting
                             int temp = array[n];
                             array[n] = array[n + 1];
                             array[n + 1] = temp;
+                            swapped = true;
                         }
                     }
                     else
@@ -41,8 +43,13 @@ namespace Learning.Sorting
                             int temp = array[n];
                             array[n] = array[n + 1];
                             array[n + 1] = temp;
+                            swapped = true;
                         }
                     }
+                }
+                if (!swapped)
+                {
+                    break; // If no swaps were made, the array is sorted
                 }
             }
             return array;
