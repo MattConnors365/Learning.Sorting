@@ -21,6 +21,15 @@
                     Console.WriteLine("Sorted Array, min to max: " + string.Join(", ", BubbleSort.Sort(bubbleArray, true)));
                     Console.WriteLine("Sorted Array, max to min: " + string.Join(", ", BubbleSort.Sort(bubbleArray, false)));
                     break;
+                case "selectionsort":
+                    Console.WriteLine("Selection Sort: Sorting an array using the Selection Sort algorithm.");
+                    Console.WriteLine("Input a comma-separated list of integers to sort, or press Enter to use the default array.");
+                    string? selectionInput = Console.ReadLine();
+                    int[] selectionArray = string.IsNullOrEmpty(selectionInput) ? [64, 34, 25, 12, 22, 11, 90, 5] : selectionInput.Split(',').Select(int.Parse).ToArray();
+                    Console.WriteLine("Original Array: " + string.Join(", ", selectionArray));
+                    Console.WriteLine("Sorted Array, min to max: " + string.Join(", ", SelectionSort.Sort(selectionArray, true)));
+                    Console.WriteLine("Sorted Array, max to min: " + string.Join(", ", SelectionSort.Sort(selectionArray, false)));
+                    break;
                 default:
                     Console.WriteLine($"No sort named \"{input}\" is accounted for");
                     break;

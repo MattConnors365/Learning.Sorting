@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Learning.Sorting
 {
-    internal class BubbleSort
+    public class BubbleSort
     {
         /*
          * Bubble Sort Algorithm
