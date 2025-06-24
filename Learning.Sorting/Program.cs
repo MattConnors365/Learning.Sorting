@@ -30,6 +30,15 @@
                     Console.WriteLine("Sorted Array, min to max: " + string.Join(", ", SelectionSort.Sort(selectionArray, true)));
                     Console.WriteLine("Sorted Array, max to min: " + string.Join(", ", SelectionSort.Sort(selectionArray, false)));
                     break;
+                case "stalinsort":
+                    Console.WriteLine("Stalin Sort: Sorting an array using the Stalin Sort algorithm.");
+                    Console.WriteLine("Input a comma-separated list of integers to sort, or press Enter to use the default array.");
+                    string? stalinInput = Console.ReadLine();
+                    int[] stalinArray = string.IsNullOrEmpty(stalinInput) ? [64, 34, 25, 12, 22, 11, 90, 5] : stalinInput.Split(',').Select(int.Parse).ToArray();
+                    Console.WriteLine("Original Array: " + string.Join(", ", stalinArray));
+                    Console.WriteLine("Sorted Array, min to max: " + string.Join(", ", StalinSort.Sort(stalinArray, true)));
+                    Console.WriteLine("Sorted Array, max to min: " + string.Join(", ", StalinSort.Sort(stalinArray, false)));
+                    break;
                 default:
                     Console.WriteLine($"No sort named \"{input}\" is accounted for");
                     break;
